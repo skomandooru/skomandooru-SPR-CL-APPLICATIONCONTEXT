@@ -3,10 +3,10 @@ package Lab;
 import Lab.Beans.ElectricEngine;
 import Lab.Beans.GasEngine;
 import Lab.Beans.NuclearEngine;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * This is the Configuration class for this spring project - there are three beans, electricPoweredBean,
@@ -15,11 +15,11 @@ import org.springframework.context.annotation.Configuration;
  *
  * Check out the contents of the "Lab" class to see how beans can be retrieved from the app context.
  */
-@Configuration
+@SpringBootApplication
 public class Application {
-    public static ApplicationContext applicationContext;
 
     public static void main(String[] args) {
+        ApplicationContext applicationContext = SpringApplication.run(Application.class);
         Lab lab = new Lab();
         System.out.println(lab.getElectricPoweredBean());
         System.out.println(lab.getGasPoweredBean());
