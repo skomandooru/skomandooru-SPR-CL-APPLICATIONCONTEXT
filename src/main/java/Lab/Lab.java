@@ -29,13 +29,13 @@ public class Lab {
      * @return a GasEngine bean
      */
     public GasEngine getGasPoweredBean(){
-        return null;
+        return applicationContext.getBean(GasEngine.class);
     }
     /**
      * TODO: Retrieve a NuclearEngine bean and return it.
      * @return a NuclearEngine bean
      */
     public NuclearEngine getNuclearPoweredBean(){
-        return null;
+        return applicationContext.getBean(NuclearEngine.class);
     }
 }
